@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-inter-sans);
+  --color-background: var(--background);
+  --color-table: var(--table);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-divide: var(--divide);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #f4f4f1;
+  --border: #e5e7eb;
+  --input: #ffffff;
+  --table: #ffffff;
+  --divide: #0000001a;
+}
+
+.dark {
+  --background: #282828;
+  --border: #686868;
+  --input: #5a5a5a;
+  --table: #534b4b;
+  --divide: #79716b;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background;
+  }
+}
