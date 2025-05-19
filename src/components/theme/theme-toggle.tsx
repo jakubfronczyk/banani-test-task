@@ -15,24 +15,32 @@ export function ThemeToggle() {
     setIsChecked(theme === "dark");
   }, [theme]);
 
+  const handleToggle = (checked: boolean) => {
+    setIsChecked(checked);
+    setTimeout(() => {
+      setTheme(checked ? "dark" : "light");
+    }, 150);
+  };
+
   if (!mounted) {
     return null;
   }
 
   return (
     <div className="flex items-center space-x-2">
-      <SunIcon className="h-4 w-4 text-orange-500" />
+      <SunIcon
+        className="h-4 w-4 text-amber-500 cursor-pointer"
+        onClick={() => handleToggle(false)}
+      />
       <Switch
         checked={isChecked}
-        onCheckedChange={(checked) => {
-          setIsChecked(checked);
-          setTimeout(() => {
-            setTheme(checked ? "dark" : "light");
-          }, 150);
-        }}
+        onCheckedChange={handleToggle}
         aria-label="Toggle dark mode"
       />
-      <MoonIcon className="h-4 w-4 text-blue-500" />
+      <MoonIcon
+        className="h-4 w-4 text-blue-500 cursor-pointer"
+        onClick={() => handleToggle(true)}
+      />
     </div>
   );
 }
