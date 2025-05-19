@@ -9,7 +9,7 @@ interface Props {
 
 export function Table({ tableData, onDelete }: Props) {
   return (
-    <div>
+    <div className="animate-fade-down animate-once">
       <h1 className="ml-2 mb-2 text-xs font-medium text-text">
         {tableData.title}
       </h1>

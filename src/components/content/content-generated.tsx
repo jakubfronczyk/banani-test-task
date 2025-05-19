@@ -31,10 +31,10 @@ export function ContentGenerated({
   const textareaRef = useAutoResizeTextarea(prompt);
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen p-4">
       {/* Sidebar */}
       <div
-        className={`transition-all duration-300 ease-in-out ${
+        className={`transition-all duration-300 ease-in-out animate-fade-down animate-once ${
           isOpen ? "w-[280px]" : "w-0"
         }`}
       >
@@ -84,7 +84,7 @@ export function ContentGenerated({
       </div>
 
       {/* Table Content */}
-      <div className="flex-1 flex justify-center items-center">
+      <div className="flex-1 flex justify-center items-center ">
         {isLoading ? (
           <TableSkeleton />
         ) : (

@@ -3,7 +3,7 @@ export function TableSkeleton() {
   const columns = 6;
 
   return (
-    <div>
+    <div className="animate-fade-down animate-once">
       {/* Title */}
       <div className="ml-2 mb-2 h-4 bg-gray-300 dark:bg-stone-700 rounded animate-pulse w-40"></div>
       <div className="border border-border rounded-lg shadow-sm overflow-hidden">

@@ -16,12 +16,12 @@ export function ContentEmpty({ prompt, onChange, onSubmit }: Props) {
 
   return (
     <div className="flex items-center justify-center flex-col mt-[20vh]">
-      <h1 className="text-3xl font-bold mb-6 text-center text-title">
+      <h1 className="text-3xl font-bold mb-6 text-center text-title animate-fade-down animate-once">
         Generate Your Custom Table
       </h1>
       <form
         action={onSubmit}
-        className="w-[580px] min-h-[100px] p-2 space-y-2 flex flex-col bg-input shadow-lg rounded-xl border border-border transition-all duration-300 ease-in-out"
+        className="w-[580px] min-h-[100px] p-2 space-y-2 flex flex-col bg-input shadow-lg rounded-xl border border-border transition-all duration-300 ease-in-out animate-fade-down animate-once delay-200"
       >
         <Textarea
           ref={textareaRef}
@@ -30,7 +30,7 @@ export function ContentEmpty({ prompt, onChange, onSubmit }: Props) {
           value={prompt}
           onChange={onChange}
           className="border-none resize-none flex-1 max-h-[300px]"
-          placeholder="What kind of table do you want to generate?"
+          placeholder="What kind of table do you want to generate? "
         />
 
         <div className="flex justify-end">
@@ -39,7 +39,7 @@ export function ContentEmpty({ prompt, onChange, onSubmit }: Props) {
           </Button>
         </div>
       </form>
-      <p className="mt-4 text-center font-light max-w-md text-text">
+      <p className="mt-4 text-center font-light max-w-md text-text animate-fade-down animate-once delay-400">
         Example: Table with 5 rows displaying company documents. Each table item
         should contain documents’ names, dates when they was added added and
         actions to delete them.

@@ -51,7 +51,7 @@ export function Content() {
   }
 
   return (
-    <div className="p-4">
+    <div>
       {/* Loading State */}
       {isLoading && !tableData && (
         <div className="flex justify-center items-center h-screen">
