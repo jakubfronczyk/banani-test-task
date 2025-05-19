@@ -97,8 +97,7 @@ lib/         → Utility functions and configuration
 - **Anthropic Claude** – AI model for table generation  
 - **Zod** – Schema validation library for defining and validating data structures  
 - **Vercel AI SDK** – Framework for integrating and managing AI models, used for running models and validating AI outputs  
-- **Sonner** – Toast notifications  
-- **Lucide React** – Icon library  
+- **Shadcn/ui** – For UI components  
 - **Next Themes** – Dark/light mode support  
 
 ---
