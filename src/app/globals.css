@@ -10,6 +10,8 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-divide: var(--divide);
+  --color-title: var(--title);
+  --color-text: var(--text);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -23,6 +25,8 @@
   --input: #ffffff;
   --table: #ffffff;
   --divide: #0000001a;
+  --title: #364153;
+  --text: #6a7282;
 }
 
 .dark {
@@ -31,6 +35,8 @@
   --input: #5a5a5a;
   --table: #534b4b;
   --divide: #79716b;
+  --title: #e7e5e4;
+  --text: #a6a09b;
 }
 
 @layer base {

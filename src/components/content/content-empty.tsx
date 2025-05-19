@@ -16,7 +16,7 @@ export function ContentEmpty({ prompt, onChange, onSubmit }: Props) {
 
   return (
     <div className="flex items-center justify-center flex-col mt-[20vh]">
-      <h1 className="text-3xl font-bold mb-6 text-center text-gray-700 dark:text-stone-200">
+      <h1 className="text-3xl font-bold mb-6 text-center text-title">
         Generate Your Custom Table
       </h1>
       <form
@@ -39,7 +39,7 @@ export function ContentEmpty({ prompt, onChange, onSubmit }: Props) {
           </Button>
         </div>
       </form>
-      <p className="mt-4 text-center font-light max-w-md text-gray-500 dark:text-stone-400">
+      <p className="mt-4 text-center font-light max-w-md text-text">
         Example: Table with 5 rows displaying company documents. Each table item
         should contain documents’ names, dates when they was added added and
         actions to delete them.

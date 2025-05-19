@@ -10,7 +10,7 @@ interface Props {
 export function Table({ tableData, onDelete }: Props) {
   return (
     <div>
-      <h1 className="ml-2 mb-2 text-xs font-medium text-gray-500 dark:text-stone-400">
+      <h1 className="ml-2 mb-2 text-xs font-medium text-text">
         {tableData.title}
       </h1>
       <div className="border border-border rounded-lg shadow-sm overflow-hidden">

@@ -12,7 +12,7 @@ export function TableHeader({ columns }: Props) {
         {columns.map((column) => (
           <th
             key={column.key}
-            className="px-6 py-1.5 text-left text-xs font-medium text-gray-500 dark:text-stone-400 whitespace-nowrap"
+            className="px-6 py-1.5 text-left text-xs font-medium text-text whitespace-nowrap"
           >
             {column.key === "actions" ? (
               <span className="flex justify-center w-full">
