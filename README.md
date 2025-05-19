@@ -1,10 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Banani Table Generator
+
+A **Next.js** application that generates custom tables using AI. This project allows users to describe the table they want in natural language, and the application will generate a structured table based on that description.
+
+---
+
+## Features
+
+- **AI-Powered Table Generation**: Simply describe the table you want, and the application will create it.
+- **Interactive UI**: Clean, responsive interface with dark/light mode support.
+- **Real-time Feedback**: Loading states and toast notifications provide clear feedback.
+- **Table Management**: Delete rows from generated tables.
+- **Responsive Design**: Works well on various screen sizes.
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
+You'll need to set up your environment variables before running the application. Copy the example environment file and add your API key:
+
+```
+ANTHROPIC_API_KEY=your_api_key_here
+```
+
+---
+
+## Installation
+
+Install the dependencies:
+```
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+---
+
+## Running the Development Server
+
+Start the development server:
+```
 npm run dev
 # or
 yarn dev
@@ -13,24 +53,62 @@ pnpm dev
 # or
 bun dev
 ```
+Open http://localhost:3000 with your browser to see the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Enter a description of the table you want to generate in the text area.
+2. Click the submit button (arrow up icon).
+3. Wait for the AI to generate your table.
+4. Once generated, you can:
+   - Delete rows using the trash icon.
+   - Generate a new table using the sidebar form.
 
-## Learn More
+### Example Prompts
 
-To learn more about Next.js, take a look at the following resources:
+- `Table with 5 rows displaying company documents. Each table item should contain documents' names, dates when they were added, and actions to delete them.`
+- `Create a sales performance table with 10 employees, showing their names, quarterly sales figures, and performance rating.`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure 
 
-## Deploy on Vercel
+```
+app/         → Contains the Next.js application routes and server actions
+actions/     → Server actions for generating tables and schema definitions
+page.tsx     → Main application page
+components/  → React components organized by feature
+  ├─ content/ → Main content components (ContentGenerator, ContentEmpty, ContentGenerated)
+  ├─ table/   → Table-related components for displaying generated data
+  ├─ theme/   → Theme-related components for dark/light modeta
+  └─ ui/      → Reusable UI components like buttons and textareas
+hooks/       → Custom React hooks
+lib/         → Utility functions and configuration
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Technologies Used
+
+- **Next.js 15** – React framework with App Router  
+- **React 19** – UI library  
+- **Tailwind CSS 4** – Utility-first CSS framework  
+- **Anthropic Claude** – AI model for table generation  
+- **Zod** – Schema validation library for defining and validating data structures  
+- **Vercel AI SDK** – Framework for integrating and managing AI models, used for running models and validating AI outputs  
+- **Sonner** – Toast notifications  
+- **Lucide React** – Icon library  
+- **Next Themes** – Dark/light mode support  
+
+---
+
+## The Power of Zod + Vercel AI SDK
+
+The combination of **Zod** and **Vercel AI SDK**'s `generateObject` function is particularly powerful, as it allows the application to:
+
+- Define exact table structure requirements using TypeScript types  
+- Validate AI-generated content against these schemas  
+- Ensure type safety throughout the application  
+- Handle edge cases when AI responses don't match expected formats  
