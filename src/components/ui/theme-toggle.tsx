@@ -10,7 +10,6 @@ export function ThemeToggle() {
   const [mounted, setIsMounted] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
-  // Set initial state once mounted
   useEffect(() => {
     setIsMounted(true);
     setIsChecked(theme === "dark");
