@@ -1,4 +1,4 @@
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Content } from "@/components/content/content";
 import { Toaster } from "@/components/ui/sonner";
 
