@@ -16,6 +16,7 @@ interface Props {
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onSubmit: (formData: FormData) => void;
   onDelete: (row: TableRow) => void;
+  onKeyPress: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
 }
 
 export function ContentGenerated({
@@ -25,6 +26,7 @@ export function ContentGenerated({
   onChange,
   onSubmit,
   onDelete,
+  onKeyPress,
 }: Props) {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -64,6 +66,7 @@ export function ContentGenerated({
             name="prompt"
             value={prompt}
             onChange={onChange}
+            onKeyDown={onKeyPress}
             className="border-none resize-none flex-1 max-h-[300px]"
             placeholder="What kind of table do you want to generate?"
           />

@@ -14,6 +14,8 @@ export function Content() {
   const [isLoading, startTransition] = useTransition();
 
   function handleSubmit(formData: FormData) {
+    if (!prompt.trim() || isLoading) return;
+
     startTransition(async () => {
       try {
         const result = await generateTable(formData);
@@ -38,6 +40,15 @@ export function Content() {
         console.error(err);
       }
     });
+  }
+
+  function handleKeyPress(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.key === "Enter" && !isLoading && prompt.trim()) {
+      e.preventDefault();
+      const formData = new FormData();
+      formData.append("prompt", prompt);
+      handleSubmit(formData);
+    }
   }
 
   function handleDelete(row: TableRow) {
@@ -65,6 +76,7 @@ export function Content() {
           prompt={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           onSubmit={handleSubmit}
+          onKeyPress={handleKeyPress}
         />
       )}
 
@@ -77,6 +89,7 @@ export function Content() {
           onChange={(e) => setPrompt(e.target.value)}
           onSubmit={handleSubmit}
           onDelete={handleDelete}
+          onKeyPress={handleKeyPress}
         />
       )}
     </div>

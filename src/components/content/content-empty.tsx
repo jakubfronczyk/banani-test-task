@@ -9,9 +9,15 @@ interface Props {
   prompt: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   onSubmit: (formData: FormData) => void;
+  onKeyPress: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
 }
 
-export function ContentEmpty({ prompt, onChange, onSubmit }: Props) {
+export function ContentEmpty({
+  prompt,
+  onChange,
+  onSubmit,
+  onKeyPress,
+}: Props) {
   const textareaRef = useAutoResizeTextarea(prompt);
 
   return (
@@ -29,6 +35,7 @@ export function ContentEmpty({ prompt, onChange, onSubmit }: Props) {
           name="prompt"
           value={prompt}
           onChange={onChange}
+          onKeyDown={onKeyPress}
           className="border-none resize-none flex-1 max-h-[300px]"
           placeholder="What kind of table do you want to generate? "
         />
