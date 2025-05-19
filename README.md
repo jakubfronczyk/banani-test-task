@@ -10,7 +10,6 @@ A **Next.js** application that generates custom tables using AI. This project al
 - **Interactive UI**: Clean, responsive interface with dark/light mode support.
 - **Real-time Feedback**: Loading states and toast notifications provide clear feedback.
 - **Table Management**: Delete rows from generated tables.
-- **Responsive Design**: Works well on various screen sizes.
 
 ---
 
